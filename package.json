@@ -1,0 +1,22 @@
+{
+  "name": "translatenonsenseapi",
+  "version": "0.1.0",
+  "description": "An API to create nonsense text by translating things through too many times ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Beatso/TranslateNonsenseAPI.git"
+  },
+  "author": "Beatso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Beatso/TranslateNonsenseAPI/issues"
+  },
+  "homepage": "https://github.com/Beatso/TranslateNonsenseAPI#readme",
+  "dependencies": {
+    "translate-google": "github:Beatso/NodeGoogleTranslate"
+  }
+}

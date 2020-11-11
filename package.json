@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/Beatso/TranslateNonsenseAPI#readme",
   "dependencies": {
-    "translate-google": "github:Beatso/NodeGoogleTranslate"
+    "google-translate-free": "^2.4.5"
   }
 }

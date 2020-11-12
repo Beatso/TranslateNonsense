@@ -34,5 +34,3 @@ const makeNonsense = async (text, iterations) => {
 	return finalResult
 	
 }
-
-makeNonsense("i wonder if my stupid code will work because I am not very good at making nice code", 40).then(res=>console.log(res))

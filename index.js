@@ -1,39 +1,44 @@
 const translate = require("google-translate-free")
-const { it } = require("google-translate-free/languages")
 
-let langKeys = Object.keys(translate.languages)
+const langKeys = Object.keys(translate.languages)
 for (i of ["auto","isSupported","getCode"]) langKeys.splice(langKeys.indexOf(i), 1)
 
-const randomLanguage = () => langKeys[Math.floor(Math.random()*langKeys.length)]
-
-const makeNonsense = (text, iterations) => {
+const makeNonsense = async (text, iterations) => {
 
 	let textInProgress = text
-
-	const updateTranslation = (to) => translate(textInProgress, {to:to})
-		.then(res=>{
-			textInProgress=res.text
-			console.log(textInProgress)
-		})
-		.catch(error=>console.error(error))
+	var finalResult = ""
 
 	// translate text through many languages
-	for (i of [...Array(iterations).keys()]) translate(textInProgress, {to:randomLanguage()})
-		.then(res=>{
-			textInProgress=res.text
-			console.log(textInProgress)
-		})
-		.catch(error=>console.error(error))
-	
-	translate(textInProgress, {to:"en"})
-		.then(res=>{
-			console.log("engrish")
-			textInProgress=res.text
-			console.log(textInProgress)
-		})
-		.catch(error=>console.error(error))
+	await (async function () {
 
+		let iteration = 0
+		console.log(textInProgress)
+
+		for (i of [...Array(iterations).keys()]) {
+			try {
+				const randomLanguage = langKeys[Math.floor(Math.random()*langKeys.length)]
+				const result = await translate(textInProgress, {to:randomLanguage})
+				textInProgress = result.text
+				iteration++
+				// console.log(JSON.stringify({"text":textInProgress,"iteration":iteration}))
+			} catch (error) {
+				console.error(error)
+			}
+		}
+	})()
+
+	// translate text back to English
+	await new Promise ( (resolve, reject) => {
+		translate(textInProgress, {to:"en"})
+			.then(res=>{
+				finalResult=res.text
+				resolve(res.text)
+			})
+			.catch(error=>reject(error))
+	})
+
+	return finalResult
+	
 }
 
-makeNonsense("hello i like cheese", 2)
-// console.log(translate.languages)
+makeNonsense("i wonder if my stupid code will work because I am not very good at making nice code", 40).then(res=>console.log(res))

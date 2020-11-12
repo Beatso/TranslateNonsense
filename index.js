@@ -10,17 +10,11 @@ const makeNonsense = async (text, iterations) => {
 
 	// translate text through many languages
 	await (async function () {
-
-		let iteration = 0
-		console.log(textInProgress)
-
 		for (i of [...Array(iterations).keys()]) {
 			try {
 				const randomLanguage = langKeys[Math.floor(Math.random()*langKeys.length)]
 				const result = await translate(textInProgress, {to:randomLanguage})
 				textInProgress = result.text
-				iteration++
-				// console.log(JSON.stringify({"text":textInProgress,"iteration":iteration}))
 			} catch (error) {
 				console.error(error)
 			}

@@ -1,5 +1,5 @@
 {
-  "name": "translatenonsense",
+  "name": "translate-nonsense",
   "version": "0.1.0",
   "description": " Create nonsense text by translating things through too many times.",
   "main": "index.js",

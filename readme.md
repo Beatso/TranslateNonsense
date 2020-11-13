@@ -19,7 +19,8 @@ npm i translate-nonsense
 
 const translateNonsense = require("translate-nonsense")
 
-translateNonsense.makeNonsense("Hello, I like cheese", 10)
+translateNonsense("Hello, I like cheese", 10)
+	.then(res=>console.log(res))
 
 // example output: "Hey, I am cheese"
 ```

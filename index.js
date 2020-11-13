@@ -34,3 +34,5 @@ const makeNonsense = async (text, iterations) => {
 	return finalResult
 	
 }
+
+module.exports = makeNonsense

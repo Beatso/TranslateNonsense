@@ -10,6 +10,11 @@
     "type": "git",
     "url": "git+https://github.com/Beatso/TranslateNonsense.git"
   },
+  "keywords": [
+    "translate",
+    "translator",
+    "fun"
+  ],
   "author": "Beatso",
   "license": "MIT",
   "bugs": {

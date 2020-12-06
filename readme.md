@@ -14,6 +14,9 @@ npm i translate-nonsense
 
 ## Usage
 
+### translateNonsense
+This is the main function, translate the specified string through many languages and back to English.
+
 ```js
 // translate the text "Hello, I like cheese" through 10 different languages
 
@@ -26,21 +29,21 @@ translateNonsense("Hello, I like cheese", 10)
 ```
 
 
-### Details
+#### Details
 
 ```js
 translateNonsense(text, iterations)
 ```
 
 
-#### `text`
+##### `text`
 
 Type: `string`
 
 The text to be translated and made into nonsense.
 
 
-#### `iterations`
+##### `iterations`
 
 Type: `integer`
 

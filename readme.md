@@ -32,7 +32,7 @@ translateNonsense("Hello, I like cheese", 10)
 #### Details
 
 ```js
-translateNonsense(text, iterations)
+translateNonsense(text, iterations, [finalLanguage])
 ```
 
 
@@ -48,6 +48,14 @@ The text to be translated and made into nonsense.
 Type: `integer`
 
 How many random languages to translate the text through.
+
+##### `finalLanguage` (optional)
+
+Type: `string`
+
+The key of the language to give the final translation in.  
+If not provided, defaults to english (`en`).
+The different language keys can be found by running [`translateNonsense.getLangs()`](#translateNonsense.getLangs) or [here](https://github.com/sufeiweb/google-translate-free/blob/0287b5e/languages.js#L9-L117)
 
 
 

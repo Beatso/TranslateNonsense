@@ -3,7 +3,9 @@ const translate = require("google-translate-free")
 let langKeys = Object.keys(translate.languages)
 for (i of ["auto", "isSupported", "getCode"]) langKeys.splice(langKeys.indexOf(i), 1)
 
-const makeNonsense = async (text, iterations) => {
+const makeNonsense = async (text, iterations, finalLanguage) => {
+
+	if (!finalLanguage) finalLanguage = "en"
 
 	let textInProgress = text
 	var finalResult = ""
@@ -23,7 +25,7 @@ const makeNonsense = async (text, iterations) => {
 
 	// translate text back to English
 	await new Promise ( (resolve, reject) => {
-		translate(textInProgress, {to:"en"})
+		translate(textInProgress, {to:finalLanguage})
 			.then(res=>{
 				finalResult=res.text
 				resolve(res.text)

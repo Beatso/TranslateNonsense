@@ -1,7 +1,7 @@
 const translate = require("google-translate-free")
 
-const langKeys = Object.keys(translate.languages)
-for (i of ["auto","isSupported","getCode"]) langKeys.splice(langKeys.indexOf(i), 1)
+let langKeys = Object.keys(translate.languages)
+for (i of ["auto", "isSupported", "getCode"]) langKeys.splice(langKeys.indexOf(i), 1)
 
 const makeNonsense = async (text, iterations) => {
 

@@ -35,4 +35,13 @@ const makeNonsense = async (text, iterations) => {
 	
 }
 
+
+const getLangs = () => {
+	let langs = translate.languages
+	for (key of ["auto", "isSupported", "getCode"]) delete langs[key]
+	return langs
+}
+
+
 module.exports = makeNonsense
+module.exports.getLangs = getLangs

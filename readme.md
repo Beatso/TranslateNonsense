@@ -48,3 +48,21 @@ The text to be translated and made into nonsense.
 Type: `integer`
 
 How many random languages to translate the text through.
+
+
+
+### translateNonsense.getLangs
+
+This returns an object containing all the used languages.
+
+```js
+// get an object containing all the used languages, and print it to the console
+
+const translateNonsense = require("translate-nonsense")
+
+const langs = translateNonsense.getLangs()
+
+console.log(langs)
+
+// example output: "Hey, I am cheese"
+```

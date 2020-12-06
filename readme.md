@@ -55,7 +55,7 @@ Type: `string`
 
 The key of the language to give the final translation in.  
 If not provided, defaults to english (`en`).
-The different language keys can be found by running [`translateNonsense.getLangs()`](#translateNonsense.getLangs) or [here](https://github.com/sufeiweb/google-translate-free/blob/0287b5e/languages.js#L9-L117)
+The different language keys can be found by running [`translateNonsense.getLangs()`](#translatenonsensegetlangs) or [here](https://github.com/sufeiweb/google-translate-free/blob/0287b5e/languages.js#L9-L117)
 
 
 
